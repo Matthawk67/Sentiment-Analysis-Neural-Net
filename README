@@ -67,9 +67,3 @@ Example stdout
                 Finished predicting 109242 values
                 Writing result csv to data/testout.csv
                 CSV writing finished. Process complete.
-
-------------------------------------------------------
-Support
-------------------------------------------------------
-If you have any issues with the above or its preformance please contact:
-    Leo Neat via lneat@ucsc.edu
