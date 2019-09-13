@@ -1,0 +1,75 @@
+------------------------------------------------------
+Background
+------------------------------------------------------
+    This was created for a CMPS 142 project at UCSC to classify the sentiment of diffrent sections of movie review
+    based on an IMDB data set. The method this team took was to create a Neural Network using Keras along with the
+    bag of words model in hopes of creating a good feature extractor
+
+------------------------------------------------------
+Installation and Setup
+------------------------------------------------------
+    Python 3.6 was used for this project.
+    It is recommended that you use anaconda to set up the environment needed to run this inference.
+    There are a few required packages that can easily be installed using the conda install function.
+    The required packages are listed below:
+
+        pickle, pandas, keras, keras_preprocessing, numpy, sklearn
+
+    Note: tensorflow was used as a backend and tensorflow-gpu has the ability to significantly inprove the speed of
+    this projects training and testing time.
+
+------------------------------------------------------
+Usage
+------------------------------------------------------
+    For training:
+        The train.py can be used to either test the performance of different models using k-fold cross validation
+        or it can be used to train a model for later inference. If the name argument is provided it will be trained
+        for saving, if not it will be evaluated using k-fold cross validation and its output will be printed to stdout
+
+        python3 train.py -mtype <model type> -name <saved trained model name>
+
+            -mtype is a string of the model type it can be the following
+                STD - standard model
+                LSTM - RNN neural net(best preforming)
+                CNN - a CNN neural net
+            -name is not required, if it is provided the model will be trained and saved rather than tested
+
+    For testing:
+        The test.py expects a specific format of test data input provided by the teacher. This will then run inference
+        on the provided test csv and save the results in an output csv which is to be turned in.
+
+        python3 test.py -incsv <name of input file> -outcsv <name of output file> -mname <saved trained model name>
+
+            -incsv is the name of the input file that the teacher provided
+            -outcsv is the name of the resulting csv where the predictions will be stored
+            -mname is the name of the saved trained model you want to use for inference
+
+    NOTE: When ever a file is refered to by these python scripts, it is assumed that the corisponding file will be
+    located in the data directory. This can be changed as long as you change the constants at the top of
+    train.py and test.py
+
+------------------------------------------------------
+Example stdout
+------------------------------------------------------
+    Training
+        command: train.py -mtype std
+
+        output: The average accuracy: 64.44317328786342
+                The average precision: 0.5613694351715468
+                The average recall: 0.5190386216568346
+                The average f1: 0.5348439564022228
+
+    Testing
+        command: python3 test.py -mname finalLSTM -incsv train.csv -outcsv testout.csv
+
+        output: CSV read 109242 sentences
+                Starting prediction of 109242 sentences
+                Finished predicting 109242 values
+                Writing result csv to data/testout.csv
+                CSV writing finished. Process complete.
+
+------------------------------------------------------
+Support
+------------------------------------------------------
+If you have any issues with the above or its preformance please contact:
+    Leo Neat via lneat@ucsc.edu
