@@ -1,10 +1,4 @@
 """
-*   train.py - 12/4/2018
-*   Leo Neat #1452487
-*
-*   This is used to train different type of neural networks on the IMDB data set for sentiment analysis
-*   If you do not have a name flag the model will not save
-*
 *   Usage: python3 train.py -mtype <model type> -name <saved trained model name>
 *
 *   Package requirements: tensorflow, numpy, pandas, sklearn, (Optional: CUDA, CUDNN, tensorflow-gpu)
