@@ -1,8 +1,4 @@
 """
-*   test.py - 12/4/2018
-*   Leo Neat #1452487
-*
-*   This is used to test a pre trained model on the imdb data set for cmps 142
 *
 *   Usage: python3 test.py -incsv <name of input file> -outcsv <name of output file> -mname <saved trained model name>
 *
